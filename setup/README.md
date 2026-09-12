@@ -4,7 +4,7 @@ A local SQL Server with real sample databases, for Power BI work.
 Nothing here needs a cloud subscription, and nothing expires.
 
 Companion to the video
-[Install SQL Server 2025, SSMS and Sample Databases for Power BI](https://youtube.com/@dragofab).
+[Install SQL Server 2025, SSMS and Sample Databases for Power BI]([https://youtube.com/@dragofab](https://youtu.be/NRyLbJUDTBs)).
 
 Allow about 30 minutes and 15 GB of disk.
 
