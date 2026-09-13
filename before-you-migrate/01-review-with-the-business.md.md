@@ -37,11 +37,11 @@ has a name against it, the clutter has someone to answer for it.
 
 Before asking anyone anything, pull the numbers. For each report:
 
-• report views
-• page views
-• number of users
-• frequency of use
-• pages nobody opens
+-  report views
+-  page views
+-  number of users
+-  frequency of use
+-  pages nobody opens
 
 This gives the review context. Without it, the whole exercise becomes
 opinion-based, and the loudest person in the room wins.
@@ -59,14 +59,14 @@ reviewed separately.
 
 The questions:
 
-• Why do we have this report?
-• What is it used for?
-• What matters most?
-• What decision should it support?
-• How often should people use it?
-• What is missing?
-• What can be removed?
-• Any other recommendations?
+-  Why do we have this report?
+-  What is it used for?
+-  What matters most?
+-  What decision should it support?
+-  How often should people use it?
+-  What is missing?
+-  What can be removed?
+-  Any other recommendations?
 
 Instead of asking "do we still need this?", ask **"what decision does this
 report support?"**. That one question changes the conversation. It moves
@@ -84,12 +84,12 @@ A full day, around fifteen leaders, every report in the app on the table.
 
 Prepare a deck first, built from:
 
-• usage metrics for each report
-• page-level usage
-• feedback from each report owner
-• the major gaps
-• suggested removals
-• examples of possible updates
+-  usage metrics for each report
+-  page-level usage
+-  feedback from each report owner
+-  the major gaps
+-  suggested removals
+-  examples of possible updates
 
 Make it a decision-making deck, not a specification. The goal is for everyone
 in the room to see what is used, what is valued, what is missing, what can go,
@@ -117,14 +117,14 @@ understand what needs attention?**"
 
 A page full of numbers is not always useful. Sometimes what it needs is:
 
-• better highlighting
-• clearer exceptions
-• conditional formatting
-• simpler visuals
-• better titles
-• fewer unnecessary metrics
-• a clear callout for what changed
-• focus on the decision the user has to make
+-  better highlighting
+-  clearer exceptions
+-  conditional formatting
+-  simpler visuals
+-  better titles
+-  fewer unnecessary metrics
+-  a clear callout for what changed
+-  focus on the decision the user has to make
 
 This is what moves a page from "this has data" to "this helps someone act".
 
@@ -185,8 +185,8 @@ the numbers is what catches real problems.
 than you asked for, which is a good sign. But if you try to fix everything you
 will never publish.
 
-• Fix now: wrong numbers, broken logic, missing critical information
-• Fix later: nice-to-have ideas, small polish
+-  Fix now: wrong numbers, broken logic, missing critical information
+-  Fix later: nice-to-have ideas, small polish
 
 You are not saying no. You are saying not yet.
 
