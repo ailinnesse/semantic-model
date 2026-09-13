@@ -11,12 +11,13 @@ That is the model that gets analysed in the video.
 
 | File | What it is |
 |---|---|
-| `<old-model>.pbix` | The model before anything was removed. Start here. |
-| `<old-model>-cleaned.pbix` | The same model after the Measure Killer TMDL export was applied. The end state, if you want to compare. |
-| `<report-1>.pbix` | Report built on the model |
-| `<report-2>.pbix` | Report built on the model |
-| `<report-3>.pbix` | Report built on the model |
-| `<old-model>.pbip/` | The before model again, in PBIP format. Text files, so you can read the TMDL and see what changed in git rather than in a dialog. |
+| `old-model.pbix` | The model before anything was removed. Start here. |
+| `old model after Measure Killer.pbix` | The same model after the Measure Killer TMDL export was applied. The end state, if you want to compare. |
+| `order report.pbix` | Report built on the model |
+| `purchase report.pbix` | Report built on the model |
+| `sale report.pbix` | Report built on the model |
+| `smt.pbix` | Report built on the model |
+| `old model pbip` | The before model again, in PBIP format. Text files, so you can read the TMDL and see what changed in git rather than in a dialog. |
 
 ## Before you start
 
@@ -27,7 +28,7 @@ You only need SQL Server if you want to refresh them. If you do:
 
 1. Follow [`../../setup`](../../setup) to get SQL Server and the sample
    databases in place
-2. Run [`../build-flat-table.sql`](../build-flat-table.sql) to create the
+2. Run [`../build-flat-table.sql`](build-flat-table.sql) to create the
    appended table the model reads from
 
 ## Pointing it at your own server
@@ -64,4 +65,4 @@ against it.
 
 ---
 
-Video: [Prepare a Power BI Semantic Model for Migration with Measure Killer](VIDEO-URL)
+Video: [Prepare a Power BI Semantic Model for Migration with Measure Killer](https://youtu.be/4AV4RcsLBN4)
