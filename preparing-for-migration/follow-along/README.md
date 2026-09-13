@@ -28,7 +28,7 @@ You only need SQL Server if you want to refresh them. If you do:
 
 1. Follow [`../../setup`](../../setup) to get SQL Server and the sample
    databases in place
-2. Run [`../build-flat-table.sql`](build-flat-table.sql) to create the
+2. Run [`build-flat-table.sql`](build-flat-table.sql) to create the
    appended table the model reads from
 
 ## Pointing it at your own server
