@@ -99,4 +99,4 @@ changes these installers regularly. If your screens differ, open an issue.
 ---
 
 Written up on LinkedIn:
-[A free SQL Server on your own laptop takes about 30 minutes to set up](LINKEDIN-POST-URL)
+[A free SQL Server on your own laptop takes about 30 minutes to set up](https://www.linkedin.com/posts/tatiana-patrusheva_powerbi-sqlserver-dataanalytics-activity-7504507880474267648-f-Mv)
