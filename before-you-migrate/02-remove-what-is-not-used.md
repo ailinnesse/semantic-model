@@ -25,10 +25,10 @@ level analysis is not all free.
 
 ## Things to keep in mind
 
-• Check Lineage View first, to see which reports are connected to the model
-• Paginated reports are not analysed by Measure Killer and have to be checked separately
-• Columns used in relationships are marked as used, even when the table itself may not actually be needed
-• It is an external tool, so it has to be downloaded and installed before it appears in Power BI Desktop
+- Check Lineage View first, to see which reports are connected to the model
+- Paginated reports are not analysed by Measure Killer and have to be checked separately
+- Columns used in relationships are marked as used, even when the table itself may not actually be needed
+- It is an external tool, so it has to be downloaded and installed before it appears in Power BI Desktop
 
 That third point is worth repeating. A column being marked as used because a
 relationship depends on it does not mean the relationship, or the table behind
