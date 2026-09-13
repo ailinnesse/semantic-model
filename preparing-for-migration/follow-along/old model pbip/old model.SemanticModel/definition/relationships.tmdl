@@ -1,0 +1,44 @@
+relationship c41160a1-5e92-4d61-a8a2-83e7e6780cfe
+	fromColumn: 'Fact Movement'.'Customer Key'
+	toColumn: 'Dimension Customer'.'Customer Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship 3896ef2b-ecb2-49ae-a67b-5bdf42fa29fc
+	fromColumn: 'Fact Movement'.'Date Key'
+	toColumn: date.Date
+
+	annotation PBI_IsFromSource = FS
+
+relationship 18c933e9-3811-4da7-851c-ebf187559b41
+	fromColumn: 'Fact Movement'.'Stock Item Key'
+	toColumn: 'Dimension Stock Item'.'Stock Item Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship 6478b673-41ea-427c-bc69-2e3b70acd835
+	fromColumn: 'Fact Movement'.'Supplier Key'
+	toColumn: 'Dimension Supplier'.'Supplier Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship ce39cbc0-ee88-45ba-9383-40ae35ff4979
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Fact Stock Holding'.'Stock Item Key'
+	toColumn: 'Dimension Stock Item'.'Stock Item Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship a8763ca0-0244-bfff-4728-aa07895ac10c
+	fromColumn: AllTransactions.CustomerKey
+	toColumn: 'Dimension Customer'.'Customer Key'
+
+relationship 3b212cc3-a672-1960-fab6-78f39b28b356
+	fromColumn: AllTransactions.StockItemKey
+	toColumn: 'Dimension Stock Item'.'Stock Item Key'
+
+relationship b6bfcf89-7a53-d03a-cebb-f3e681cd42e4
+	fromColumn: AllTransactions.DateKey
+	toColumn: date.Date
+

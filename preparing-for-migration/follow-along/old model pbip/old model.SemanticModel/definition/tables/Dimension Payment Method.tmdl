@@ -1,0 +1,69 @@
+table 'Dimension Payment Method'
+	lineageTag: 940ffc94-e99c-4de1-8438-261d3486fa2f
+
+	column 'Payment Method'
+		dataType: string
+		lineageTag: 01a0d7d9-b66a-40ae-97b7-3a11b156de2c
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d03d9d79-7f82-4c92-bc15-f0e3a4e37732
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 578c3433-0e54-4a55-9597-bd97ab7d7c1f
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Method Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: a8b623be-1515-4f58-8676-da9882a98d7a
+		summarizeBy: count
+		sourceColumn: Payment Method Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Payment Method ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 863b38ff-1d03-4c68-b569-539024eff3aa
+		summarizeBy: count
+		sourceColumn: WWI Payment Method ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c5ca3e7-4a0b-44e1-92b4-269b014bc0c5
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Payment Method' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    #"Dimension_Payment Method" = Source{[Schema="Dimension",Item="Payment Method"]}[Data]
+				in
+				    #"Dimension_Payment Method"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,29 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["AllTransactions","Fact Movement","Dimension Stock Item","Dimension Customer","Fact Stock Holding","Dimension Supplier","Dimension Payment Method","date","_Measures","Server","Database"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
+
+ref table AllTransactions
+ref table 'Fact Movement'
+ref table 'Dimension Stock Item'
+ref table 'Dimension Customer'
+ref table 'Fact Stock Holding'
+ref table 'Dimension Supplier'
+ref table 'Dimension Payment Method'
+ref table date
+ref table _Measures
+
+ref cultureInfo en-GB
+

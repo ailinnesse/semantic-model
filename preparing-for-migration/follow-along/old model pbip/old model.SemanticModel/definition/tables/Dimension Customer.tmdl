@@ -1,0 +1,109 @@
+table 'Dimension Customer'
+	lineageTag: 1292579b-95b1-4eaa-af11-1b230102eceb
+
+	column 'Customer Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a8d4684-e51d-42a7-91af-bb0213a86f87
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer
+		dataType: string
+		lineageTag: d6275320-fa3e-4ff5-802e-7324996a1deb
+		summarizeBy: none
+		sourceColumn: Customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Customer ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 55920c5d-5b39-4f12-9139-d643070c4f27
+		summarizeBy: count
+		sourceColumn: WWI Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill To Customer'
+		dataType: string
+		lineageTag: 14574f91-e59f-4fb8-8bf2-1411776da890
+		summarizeBy: none
+		sourceColumn: Bill To Customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 0cc11597-9d50-492d-8d35-0095be0e7d0c
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Buying Group'
+		dataType: string
+		lineageTag: 7a563170-bdb1-4531-b2a6-dce8a5671741
+		summarizeBy: none
+		sourceColumn: Buying Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Contact'
+		dataType: string
+		lineageTag: a01e6663-d2e4-4ba9-9341-2a210746ad4e
+		summarizeBy: none
+		sourceColumn: Primary Contact
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: b96079bc-59bf-43d4-a9e8-9adb85e11c49
+		summarizeBy: none
+		sourceColumn: Postal Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e32ddd03-64c7-4a9d-b736-cdb3f85add5d
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 831dc164-291d-4087-83a1-981a8526e101
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: bb3ebf68-ff1f-449f-97f5-958ea5696d21
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Customer' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    Dimension_Customer = Source{[Schema="Dimension",Item="Customer"]}[Data]
+				in
+				    Dimension_Customer
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

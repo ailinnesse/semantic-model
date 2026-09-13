@@ -1,0 +1,117 @@
+table 'Fact Movement'
+	lineageTag: 3c256e7d-feee-42e7-868f-678d9514b502
+
+	column 'Date Key'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b2d857b9-3ea8-4cc2-af6b-da1a5824e6c2
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Stock Item Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: a757fe15-84b2-4c92-9423-7ff9cc5d3d8c
+		summarizeBy: none
+		sourceColumn: Stock Item Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 18f817ca-8617-4c54-8330-020d17ae4e61
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: d392a69c-4015-4737-88a3-42a3d87aa3d8
+		summarizeBy: none
+		sourceColumn: Supplier Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Movement Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: ab9f4c0a-50ef-48f9-9a0c-5f9efc224648
+		summarizeBy: count
+		sourceColumn: Movement Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: d1bc5e54-aa96-4c9e-952a-eb96a40b0134
+		summarizeBy: count
+		sourceColumn: Transaction Type Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Stock Item Transaction ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: a8a1115b-738f-463b-a7da-f4091c6f6043
+		summarizeBy: count
+		sourceColumn: WWI Stock Item Transaction ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Invoice ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: b0358556-49fa-4c1f-b667-1b1e5ca03f21
+		summarizeBy: count
+		sourceColumn: WWI Invoice ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Purchase Order ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: fc8efca1-0a57-4f4b-afd2-09c4e78eb2a6
+		summarizeBy: count
+		sourceColumn: WWI Purchase Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 17bbea23-201c-47c8-a35c-4d0feaff353a
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ecad37b-e300-4858-8e67-720a38870dbd
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Movement' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    Fact_Movement = Source{[Schema="Fact",Item="Movement"]}[Data]
+				in
+				    Fact_Movement
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

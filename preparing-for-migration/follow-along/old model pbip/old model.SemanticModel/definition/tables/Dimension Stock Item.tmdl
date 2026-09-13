@@ -1,0 +1,184 @@
+table 'Dimension Stock Item'
+	lineageTag: d1d7bb99-f609-4594-88bd-f21cb4d9f386
+
+	column 'Stock Item Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7cbc0b4e-8709-47f8-a6b0-0efabc789b9e
+		summarizeBy: none
+		sourceColumn: Stock Item Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stock Item'
+		dataType: string
+		lineageTag: df691a91-e2eb-42c4-84d0-148136ec9b3d
+		summarizeBy: none
+		sourceColumn: Stock Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 5595451b-8682-4ce7-a792-52cf7f9f49b2
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Package'
+		dataType: string
+		lineageTag: 04cb0b70-65c9-450c-8e64-7a714f3ccf41
+		summarizeBy: none
+		sourceColumn: Selling Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Buying Package'
+		dataType: string
+		lineageTag: cef2c879-0069-4317-89c6-89ab6e2a3054
+		summarizeBy: none
+		sourceColumn: Buying Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: b1a14e45-0a68-4905-a37f-3cd948215879
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		lineageTag: d76f738f-01ba-4e8c-b37a-ddac39c943f5
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tax Rate'
+		dataType: double
+		lineageTag: 5284ce57-62c1-4896-9438-30ad2c25c959
+		summarizeBy: sum
+		sourceColumn: Tax Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Unit Price'
+		dataType: double
+		lineageTag: 139722db-ee88-473d-823c-8acdb15f152a
+		summarizeBy: sum
+		sourceColumn: Unit Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WWI Stock Item ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 54f62a7f-e526-4a18-96f5-ece34cc16820
+		summarizeBy: count
+		sourceColumn: WWI Stock Item ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Time Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 02e14c08-6689-4daf-b8fa-9d97a5936022
+		summarizeBy: sum
+		sourceColumn: Lead Time Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quantity Per Outer'
+		dataType: int64
+		formatString: 0
+		lineageTag: f3aaabbf-9621-4033-9c86-225200771fc4
+		summarizeBy: sum
+		sourceColumn: Quantity Per Outer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Chiller Stock'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9cabbfb3-e8c1-4a54-82ee-f0c250d8c030
+		summarizeBy: none
+		sourceColumn: Is Chiller Stock
+
+		annotation SummarizationSetBy = Automatic
+
+	column Barcode
+		dataType: string
+		lineageTag: 4ce7e83d-a564-49f9-886f-516f5f13d23c
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recommended Retail Price'
+		dataType: double
+		lineageTag: f8362600-a8f8-4b30-8e99-dc1d73dac991
+		summarizeBy: sum
+		sourceColumn: Recommended Retail Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Typical Weight Per Unit'
+		dataType: double
+		lineageTag: aa09b915-1166-4d8c-ac0e-ccf166ae0798
+		summarizeBy: sum
+		sourceColumn: Typical Weight Per Unit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Valid From'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88c2df26-727d-45e4-9b45-6ad2441e921e
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 69fcfc52-50c1-417e-ad9b-cdd560c65d5f
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d4b1546-a892-4650-9586-d4c70c79bc9e
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Stock Item' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    #"Dimension_Stock Item" = Source{[Schema="Dimension",Item="Stock Item"]}[Data]
+				in
+				    #"Dimension_Stock Item"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

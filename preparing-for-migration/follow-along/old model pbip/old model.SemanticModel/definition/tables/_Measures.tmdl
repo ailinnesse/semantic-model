@@ -1,0 +1,183 @@
+table _Measures
+	lineageTag: 93e9be5a-c01d-4a81-bd2b-b09bc338e398
+
+	/// Total UnitPrice from AllTransactions
+	measure 'AllTransactions UnitPrice' = SUM('AllTransactions'[UnitPrice])
+		displayFolder: AllTransactions
+		lineageTag: 9c2f7a6e-75e4-4fa8-9c1a-7af50c1ada78
+
+	/// Total TaxRate from AllTransactions
+	measure 'AllTransactions TaxRate' = SUM('AllTransactions'[TaxRate])
+		displayFolder: AllTransactions
+		lineageTag: 17afc80c-dbb9-4009-806f-666667cf67f5
+
+	/// Total Profit from AllTransactions
+	measure 'AllTransactions Profit' = SUM('AllTransactions'[Profit])
+		displayFolder: AllTransactions
+		lineageTag: f7ad5a13-c343-4666-b1f2-6e01c81e0c2f
+
+	/// Total Tax Rate from Dimension Stock Item
+	measure 'Dimension Stock Item Tax Rate' = SUM('Dimension Stock Item'[Tax Rate])
+		displayFolder: Dimension Stock Item
+		lineageTag: 0705985c-10da-4125-a5b0-94b2e317f8ca
+
+	/// Total Unit Price from Dimension Stock Item
+	measure 'Dimension Stock Item Unit Price' = SUM('Dimension Stock Item'[Unit Price])
+		displayFolder: Dimension Stock Item
+		lineageTag: 58c41f83-f219-4b8c-9de8-840af349d789
+
+	/// Month-to-date calculation for [AllTransactions Profit].
+	measure 'AllTransactions Profit MTD' =
+			CALCULATE(
+			    [AllTransactions Profit],
+			    DATESMTD('date'[Date])
+			)
+		displayFolder: AllTransactions
+		lineageTag: 79ff7a30-0d08-44b0-88ad-1fcb4955ec3a
+
+	/// Year-to-date calculation for [AllTransactions Profit].
+	measure 'AllTransactions Profit YTD' =
+			CALCULATE(
+			    [AllTransactions Profit],
+			    DATESYTD('date'[Date])
+			)
+		displayFolder: AllTransactions
+		lineageTag: 18294e85-2bdc-4a7f-8e9b-3423743ea9b8
+
+	/// Previous Month To Date calculation for [AllTransactions Profit].
+	measure 'AllTransactions Profit PMTD' =
+			CALCULATE(
+			    [AllTransactions Profit],
+			    DATESMTD(
+			        DATEADD(
+			            'date'[Date],
+			            -1,
+			            MONTH
+			        )
+			    )
+			)
+		displayFolder: AllTransactions
+		lineageTag: 03f5ff68-f325-4f70-ab63-16ce50ab733c
+
+	/// Prior Year Month To Date calculation for [AllTransactions Profit].
+	measure 'AllTransactions Profit LY MTD' =
+			CALCULATE(
+			    [AllTransactions Profit MTD],
+			    SAMEPERIODLASTYEAR('date'[Date])
+			)
+		displayFolder: AllTransactions
+		lineageTag: 664cc4e7-94e1-4f6f-bee5-ee63366922d4
+
+	/// Prior Year Year To Date calculation for [AllTransactions Profit].
+	measure 'AllTransactions Profit LY YTD' =
+			CALCULATE(
+			    [AllTransactions Profit YTD],
+			    SAMEPERIODLASTYEAR('date'[Date])
+			)
+		displayFolder: AllTransactions
+		lineageTag: d34baaf6-cf2c-4813-9969-82b6304577e9
+
+	/// Year-over-Year MTD percentage change for [AllTransactions Profit].
+	measure 'AllTransactions Profit YoY MTD %' =
+			DIVIDE(
+			    [AllTransactions Profit MTD] - [AllTransactions Profit LY MTD],
+			    [AllTransactions Profit LY MTD]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AllTransactions
+		lineageTag: 6e25a940-b0b7-42e6-a819-36818466c8f1
+
+	/// Year-over-Year YTD percentage change for [AllTransactions Profit].
+	measure 'AllTransactions Profit YoY YTD %' =
+			DIVIDE(
+			    [AllTransactions Profit YTD] - [AllTransactions Profit LY YTD],
+			    [AllTransactions Profit LY YTD]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AllTransactions
+		lineageTag: 335195be-1043-4e90-8813-f8c82c200724
+
+	/// Month-over-Month MTD percentage change for [AllTransactions Profit].
+	measure 'AllTransactions Profit MoM MTD %' =
+			DIVIDE(
+			    [AllTransactions Profit MTD] - [AllTransactions Profit PMTD],
+			    [AllTransactions Profit PMTD]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AllTransactions
+		lineageTag: 84c9ba2b-419e-4818-8a07-85f7a432ef96
+
+	/// Month-to-date calculation for [Dimension Stock Item Unit Price].
+	measure 'Dimension Stock Item Unit Price MTD' =
+			CALCULATE(
+			    [Dimension Stock Item Unit Price],
+			    DATESMTD('date'[Date])
+			)
+		displayFolder: Dimension Stock Item
+		lineageTag: 55f97a07-3bca-4f2b-ae97-6b5a9bcc10b1
+
+	/// Previous Month To Date calculation for [Dimension Stock Item Unit Price].
+	measure 'Dimension Stock Item Unit Price PMTD' =
+			CALCULATE(
+			    [Dimension Stock Item Unit Price],
+			    DATESMTD(
+			        DATEADD(
+			            'date'[Date],
+			            -1,
+			            MONTH
+			        )
+			    )
+			)
+		displayFolder: Dimension Stock Item
+		lineageTag: efc05bb3-1aa2-427b-8d3b-656b411cffa9
+
+	/// Total TotalExcludingTax from AllTransactions
+	measure 'AllTransactions TotalExcludingTax' = SUM('AllTransactions'[TotalExcludingTax])
+		displayFolder: AllTransactions
+		lineageTag: 9382fb16-7f60-4ea8-868d-5f96b0bf7519
+
+	/// Total TaxAmount from AllTransactions
+	measure 'AllTransactions TaxAmount' = SUM('AllTransactions'[TaxAmount])
+		displayFolder: AllTransactions
+		lineageTag: b318842c-d4a0-415f-a685-a60d61120054
+
+	/// Total TotalIncludingTax from AllTransactions
+	measure 'AllTransactions TotalIncludingTax' = SUM('AllTransactions'[TotalIncludingTax])
+		displayFolder: AllTransactions
+		lineageTag: f3645b47-2263-4a5a-a953-56ba803472bd
+
+	/// Total Recommended Retail Price from Dimension Stock Item
+	measure 'Dimension Stock Item Recommended Retail Price' = SUM('Dimension Stock Item'[Recommended Retail Price])
+		displayFolder: Dimension Stock Item
+		lineageTag: 3030653b-ada8-470d-8259-7eb1f4e42b45
+
+	/// Total Typical Weight Per Unit from Dimension Stock Item
+	measure 'Dimension Stock Item Typical Weight Per Unit' = SUM('Dimension Stock Item'[Typical Weight Per Unit])
+		displayFolder: Dimension Stock Item
+		lineageTag: 9b9e29f4-91fc-444f-8fd2-f31980e1b3f2
+
+	/// Total Last Cost Price from Fact Stock Holding
+	measure 'Fact Stock Holding Last Cost Price' = SUM('Fact Stock Holding'[Last Cost Price])
+		displayFolder: Fact Stock Holding
+		lineageTag: ec853b9c-c541-40f3-b743-ffc4bfb137b7
+
+	column _Measures
+		dataType: string
+		lineageTag: 645bcde5-5b2d-4388-9e72-af3eb68c6fa4
+		summarizeBy: none
+		sourceColumn: _Measures
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = ""
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

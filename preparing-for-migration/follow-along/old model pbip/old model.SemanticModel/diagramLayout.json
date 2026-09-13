@@ -1,0 +1,138 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1.2000000476837158,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1238.0480730568333,
+            "y": 0
+          },
+          "nodeIndex": "AllTransactions",
+          "nodeLineageTag": "a09c1427-2bfb-4fc8-84c6-964d94cbc667",
+          "size": {
+            "height": 665,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 861.04807305683323,
+            "y": 0
+          },
+          "nodeIndex": "Dimension Customer",
+          "nodeLineageTag": "1292579b-95b1-4eaa-af11-1b230102eceb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1270.0480730568333,
+            "y": 768.16846984299627
+          },
+          "nodeIndex": "Dimension Payment Method",
+          "nodeLineageTag": "940ffc94-e99c-4de1-8438-261d3486fa2f",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 236.13443180460763,
+            "y": 649.86422206279963
+          },
+          "nodeIndex": "Dimension Stock Item",
+          "nodeLineageTag": "d1d7bb99-f609-4594-88bd-f21cb4d9f386",
+          "size": {
+            "height": 442,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 128.11188941700982,
+            "y": 0
+          },
+          "nodeIndex": "Dimension Supplier",
+          "nodeLineageTag": "623dc584-f1dd-42c7-bac4-ae4df37cc545",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 494.85702265870509,
+            "y": 0
+          },
+          "nodeIndex": "Fact Movement",
+          "nodeLineageTag": "3c256e7d-feee-42e7-868f-678d9514b502",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 301.09956656078577
+          },
+          "nodeIndex": "Fact Stock Holding",
+          "nodeLineageTag": "bfa5f833-9f04-45a9-941e-11b400dae38e",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1632.0480730568333,
+            "y": 215.08423492149814
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "93e9be5a-c01d-4a81-bd2b-b09bc338e398",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 908.85143472159245,
+            "y": 602.33693968599243
+          },
+          "nodeIndex": "date",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

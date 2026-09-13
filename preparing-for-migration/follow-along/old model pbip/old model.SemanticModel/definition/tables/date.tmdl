@@ -1,0 +1,139 @@
+table date
+	lineageTag: 8eb2202e-442b-4630-949a-38888529ee37
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 9dc7c92c-dcf5-4bbd-a45a-a45bf18a6663
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Fiscal Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: ad665cd4-2e67-4732-b640-5ef4792d94f5
+		summarizeBy: sum
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 06f7944a-2152-4e2d-9f1a-49f3573b353d
+		summarizeBy: sum
+		sourceColumn: Day Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: string
+		lineageTag: dd4a59a2-e41d-4496-a0d0-4b887410bb2e
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 41be61d7-f44b-4488-bb93-64c20bbe20a8
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Short Month'
+		dataType: string
+		lineageTag: 5a9570a2-a0cb-4bd3-af6f-a4980a532440
+		summarizeBy: none
+		sourceColumn: Short Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b55931b-59d4-4144-8ae9-faa74841a771
+		summarizeBy: sum
+		sourceColumn: Calendar Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Label'
+		dataType: string
+		lineageTag: 28a8e9cb-1142-4a7c-a967-872f9e94ec92
+		summarizeBy: none
+		sourceColumn: Calendar Month Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 74f782be-11de-4c1e-9402-d9cc3f9e686e
+		summarizeBy: sum
+		sourceColumn: Calendar Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Year Label'
+		dataType: string
+		lineageTag: 48e81c00-cad8-45a2-8e2f-3cceb87cbaae
+		summarizeBy: none
+		sourceColumn: Calendar Year Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 36764670-beb0-49cd-8e7e-42dc74236698
+		summarizeBy: sum
+		sourceColumn: Fiscal Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Label'
+		dataType: string
+		lineageTag: 5e3b549d-3061-45f3-a859-27055910a65d
+		summarizeBy: none
+		sourceColumn: Fiscal Month Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Label'
+		dataType: string
+		lineageTag: f41b718e-5a3f-49b1-ab7a-d9b5766d02cf
+		summarizeBy: none
+		sourceColumn: Fiscal Year Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISO Week Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 82d6dd67-0c7d-4c29-ba52-3447a8bdfdef
+		summarizeBy: sum
+		sourceColumn: ISO Week Number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition date = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    Dimension_Date = Source{[Schema="Dimension",Item="Date"]}[Data]
+				in
+				    Dimension_Date
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

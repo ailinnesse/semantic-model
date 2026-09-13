@@ -1,0 +1,194 @@
+table AllTransactions
+	lineageTag: a09c1427-2bfb-4fc8-84c6-964d94cbc667
+
+	column RecordType
+		dataType: string
+		lineageTag: e8a84ca8-22ce-41f8-820c-9be0bb67e7e9
+		summarizeBy: none
+		sourceColumn: RecordType
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0b7f5710-4a09-48c3-bd1e-039723d952ee
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column StockItemKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a1d491e6-28f3-49c5-938a-da28a43eee6c
+		summarizeBy: none
+		sourceColumn: StockItemKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 16788aae-3ceb-4b16-94ea-bf4af85aa8fa
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 946743e0-937d-4f18-8f77-d6613cb42a16
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Package
+		dataType: string
+		lineageTag: 2ee1a227-a907-4a9c-8f66-861a9add9ae7
+		summarizeBy: none
+		sourceColumn: Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 7a6176ea-14e9-48a7-8b3a-a43cf337fb23
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TaxRate
+		dataType: double
+		lineageTag: beb2aae5-6a3e-4f54-8b92-e1b50d07abbc
+		summarizeBy: sum
+		sourceColumn: TaxRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		lineageTag: 87e009d5-f0ad-4502-8993-bbe7e1a54999
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SourceKey
+		dataType: int64
+		formatString: 0
+		lineageTag: c9043408-96c7-47e3-9161-0628d1be6854
+		summarizeBy: count
+		sourceColumn: SourceKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DocumentID
+		dataType: int64
+		formatString: 0
+		lineageTag: 56857cc0-f7bb-4a0a-9fd9-6b07505d0641
+		summarizeBy: count
+		sourceColumn: DocumentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SecondaryDateKey
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 237d1c3f-c9e6-4530-b3dd-0a03039124dc
+		summarizeBy: none
+		sourceColumn: SecondaryDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SupplierKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f2eca88-23be-4428-be7e-f6f1144d0640
+		summarizeBy: count
+		sourceColumn: SupplierKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalespersonKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b86b27c2-cc30-4b65-a2de-ba1c83555c15
+		summarizeBy: count
+		sourceColumn: SalespersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CityKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 4216cc0e-56e1-4230-a851-7c17953c008e
+		summarizeBy: count
+		sourceColumn: CityKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: a35901e3-3249-405b-ba94-1d31f86aad14
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalExcludingTax
+		dataType: double
+		lineageTag: 4d3321ae-49aa-48ca-85e0-0ba2fa1cb378
+		summarizeBy: sum
+		sourceColumn: TotalExcludingTax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TaxAmount
+		dataType: double
+		lineageTag: 136596c8-afc1-4b39-a477-925e6ad729bb
+		summarizeBy: sum
+		sourceColumn: TaxAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TotalIncludingTax
+		dataType: double
+		lineageTag: bfdf52dc-4dfb-43ee-9c51-b21988501146
+		summarizeBy: sum
+		sourceColumn: TotalIncludingTax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition AllTransactions = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dbo_AllTransactions = Source{[Schema="dbo",Item="AllTransactions"]}[Data]
+				in
+				    dbo_AllTransactions
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
