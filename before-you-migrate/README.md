@@ -13,4 +13,4 @@ you are about to do.
 Do them in that order. Step 1 tells you which reports survive. There is no
 point auditing a model against reports that are about to be retired.
 
-Related video: [Preparing an existing model for optimisation](https://www.youtube.com/watch?v=uW1LsRH9OtM)
+Related video: [Using Measure Killer to find unused Tables, Columns and Measures across all the connected reports](https://www.youtube.com/watch?v=uW1LsRH9OtM)
