@@ -64,4 +64,4 @@ refreshes, and a field list people can actually navigate.
 
 ---
 
-Related video: [Preparing an existing model for optimisation](https://www.youtube.com/watch?v=uW1LsRH9OtM)
+Related video: [Using Measure Killer to find unused Tables, Columns and Measures across all the connected reports](https://www.youtube.com/watch?v=uW1LsRH9OtM)
