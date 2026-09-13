@@ -52,16 +52,51 @@ Put all four in `C:\SQLBackups`.
    service.
 6. **Run [`sql-server-setup.sql`](sql-server-setup.sql)** section by section.
    It restores the databases, creates a read-only login for Power BI, and
-   verifies the result.
+   verifies the result. See below for why the restore looks the way it does.
 7. **Connect Power BI Desktop** — Get Data → SQL Server → server `localhost`,
    database `Contoso`, Import mode.
+
+## Why the restore needs MOVE
+
+This is the part of the setup that confuses most people, and it is worth
+understanding rather than copying.
+
+A backup file remembers the folder layout of the machine it was made on. Those
+folders almost certainly do not exist on yours. So every file inside the backup
+has to be redirected to somewhere real, and that is what `MOVE` does.
+
+`MOVE` needs the **logical** name of each file, not the file name you can see.
+`RESTORE FILELISTONLY` is how you find them:
+
+```sql
+RESTORE FILELISTONLY FROM DISK = 'C:\SQLBackups\Contoso 100K.bak';
+```
+
+Read the `LogicalName` column, then write one `MOVE` clause per row. Type `D`
+is a data file, type `L` is the log. Some backups have two files, some have
+three.
+
+The destination folder has to exist already. SQL Server will not create it.
 
 ## If something goes wrong
 
 See [troubleshooting.md](troubleshooting.md). Five things commonly break, and
 two of them look like password problems but aren't.
 
+The two that catch almost everybody:
+
+- **The person installing SQL Server becomes its administrator, and nobody
+  else does.** Install using the Windows account you actually intend to use.
+- **Operating system error 2 or 5 during a restore** is about the destination
+  folder. Either it does not exist, or the SQL Server service account cannot
+  write to it.
+
 ## Versions
 
 Written against SQL Server 2025 (17.0) and SSMS 22, September 2026. Microsoft
 changes these installers regularly. If your screens differ, open an issue.
+
+---
+
+Written up on LinkedIn:
+[A free SQL Server on your own laptop takes about 30 minutes to set up](LINKEDIN-POST-URL)
