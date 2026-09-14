@@ -16,7 +16,7 @@ That is the model that gets analysed in the video.
 | `order report.pbix` | Report built on the model |
 | `purchase report.pbix` | Report built on the model |
 | `sale report.pbix` | Report built on the model |
-| `smt.pbix` | Report built on the model |
+| `smt.pbix` | Report built on the model, combining several record types rather than only one|
 | `old model pbip` | The before model again, in PBIP format. Text files, so you can read the TMDL and see what changed in git rather than in a dialog. |
 
 ## Before you start
