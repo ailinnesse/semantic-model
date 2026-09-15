@@ -8,9 +8,12 @@ series. Each episode adds a folder here.
 
 ## Contents
 
-| Folder | What's in it | Video |
+## Contents
+
+| | Folder | What's in it |
 |---|---|---|
-| `setup/` | SQL Server install, sample database restores, demo login | Install SQL Server 2025, SSMS and Sample Databases for Power BI |
+| 1 | [`setup`](setup) | A local SQL Server with real sample databases, so you have something to work against. Start here if you have nothing set up. |
+| 2 | [`preparing-for-migration`](preparing-for-migration) | What to do before you rebuild a semantic model: review the reports with the business, then find what the model actually uses. |
 
 ## Getting started
 
