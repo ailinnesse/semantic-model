@@ -1,14 +1,9 @@
-# Preparing a semantic model for migration
+# Before you migrate
 
 Three things to do before you open Power BI Desktop and start rebuilding.
 
-
 None of them is modelling work. All of them decide how much modelling work you
 are about to do.
-=======
-Neither of them is modelling work. Both of them decide how much modelling
-work you are about to do.
-
 
 | | | |
 |---|---|---|
@@ -20,21 +15,4 @@ Do them in this order. Step 1 tells you which reports survive, so there is no
 point auditing the model against reports that are about to be retired. Step 2
 produces the extract used in step 3.
 
-
 Related video: [Preparing an existing model for optimisation](https://www.youtube.com/watch?v=uW1LsRH9OtM)
-=======
-The same Measure Killer analysis in step 2 gives you a second thing: a list of
-every table, column and measure the reports actually use. Exported to Excel,
-that is the base of your migration documentation. It tells you what the new
-model has to support.
-
-## Follow along
-
-The model, the reports and the exports from the video are in
-[`follow-along`](follow-along), so you can run the same analysis yourself.
-
-## Videos
-
-- [Prepare a Power BI Semantic Model for Migration with Measure Killer](https://youtu.be/4AV4RcsLBN4)
-- [Using Measure Killer to find unused tables, columns and measures across all connected reports](https://youtu.be/uW1LsRH9OtM)
-
