@@ -11,13 +11,16 @@ That is the model that gets analysed in the video.
 
 | File | What it is |
 |---|---|
-| `old-model.pbix` | The model before anything was removed. Start here. |
-| `old model after Measure Killer.pbix` | The same model after the Measure Killer TMDL export was applied. The end state, if you want to compare. |
-| `order report.pbix` | Report built on the model |
-| `purchase report.pbix` | Report built on the model |
-| `sale report.pbix` | Report built on the model |
-| `smt.pbix` | Report built on the model |
-| `old model pbip` | The before model again, in PBIP format. Text files, so you can read the TMDL and see what changed in git rather than in a dialog. |
+| [`old model.pbix`](old%20model.pbix) | The model before anything was removed. Start here. |
+| [`old model pbip`](old%20model%20pbip) | The before model again, in PBIP format. Text files, so you can read the TMDL and see what changed in git rather than in a dialog. |
+| [`old model after Measure Killer.pbix`](old%20model%20after%20Measure%20Killer.pbix) | The same model after the Measure Killer TMDL export was applied. The end state, if you want to compare. |
+| [`order report.pbix`](order%20report.pbix) | Report built on the model |
+| [`purchase report.pbix`](purchase%20report.pbix) | Report built on the model |
+| [`sale report.pbix`](sale%20report.pbix) | Report built on the model |
+| [`smt.pbix`](smt.pbix) | Report built on the model, combining several record types rather than only one |
+| [`model.xlsx`](model.xlsx) | The Measure Killer export: every table, column and measure the reports actually use. The base of the migration documentation. |
+| [`build-flat-table.sql`](build-flat-table.sql) | Builds the single appended table the model reads from, out of WideWorldImportersDW. |
+
 
 ## Before you start
 
