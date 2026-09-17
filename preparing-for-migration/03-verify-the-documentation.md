@@ -11,8 +11,8 @@ The draft is worth having. It is not worth trusting.
 - The Python scripts from the old system, holding most of the transformation
   logic
 - The semantic model extract from Measure Killer, from
-  [step 2](02-remove-what-is-not-used.md) — the tables, columns and measures
-  the reports reference
+  [step 2](02-remove-what-is-not-used.md#export-what-is-in-use) — the tables,
+  columns and measures the reports reference
 
 Both inputs were correct. The documentation that came back still was not.
 

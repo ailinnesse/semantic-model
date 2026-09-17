@@ -48,6 +48,28 @@ it, earns its place. Read the result, do not just follow it.
 8. Review the list of used and unused tables, columns and measures
 9. Remove the unnecessary ones from the model
 
+On step 9, Measure Killer can export clean TMDL for you — the model with the
+unused objects already taken out — which you paste into the TMDL view and run.
+It is much faster than deleting things one at a time.
+
+For anything going to production, read that script before you run it. It is
+doing a lot at once, and you want to know what it is removing.
+
+## Export what is in use
+
+The same analysis that tells you what to remove also tells you what to keep,
+and that list is worth exporting before you close the tool.
+
+Measure Killer will export the tables, columns and measures that are in use to
+Excel. That file becomes the base of the migration documentation. It is
+generated from the model and the connected reports rather than reconstructed
+from memory, so it does not miss things and it does not invent them.
+
+[`follow-along/model.xlsx`](follow-along/model.xlsx) is the export from the
+video, if you want to see the shape of it before producing your own.
+
+[Step 3](03-verify-the-documentation.md) uses this file.
+
 ## Afterwards
 
 Write down what you removed. If something turns out to have been needed, you
@@ -64,4 +86,11 @@ refreshes, and a field list people can actually navigate.
 
 ---
 
-Related video: [Using Measure Killer to find unused Tables, Columns and Measures across all the connected reports](https://www.youtube.com/watch?v=uW1LsRH9OtM)
+Video: [Prepare a Power BI Semantic Model for Migration with Measure Killer](https://www.youtube.com/watch?v=4AV4RcsLBN4)
+— the migration pass, including the clean TMDL export and the Excel export
+above. Files to follow along with are in [`follow-along/`](follow-along/).
+
+Earlier walkthrough: [Using Measure Killer to find unused Tables, Columns and
+Measures across all the connected reports](https://www.youtube.com/watch?v=uW1LsRH9OtM)
+
+Next step: [Verify the documentation](03-verify-the-documentation.md)
