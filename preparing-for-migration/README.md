@@ -2,13 +2,13 @@
 
 Three things to do before you open Power BI Desktop and start rebuilding.
 
-<<<<<<< HEAD
+
 None of them is modelling work. All of them decide how much modelling work you
 are about to do.
 =======
 Neither of them is modelling work. Both of them decide how much modelling
 work you are about to do.
->>>>>>> b75698854213bea8528a60a5015189534b5ae84b
+
 
 | | | |
 |---|---|---|
@@ -20,7 +20,7 @@ Do them in this order. Step 1 tells you which reports survive, so there is no
 point auditing the model against reports that are about to be retired. Step 2
 produces the extract used in step 3.
 
-<<<<<<< HEAD
+
 Related video: [Preparing an existing model for optimisation](https://www.youtube.com/watch?v=uW1LsRH9OtM)
 =======
 The same Measure Killer analysis in step 2 gives you a second thing: a list of
