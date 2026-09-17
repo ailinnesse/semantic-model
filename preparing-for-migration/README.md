@@ -37,4 +37,4 @@ The model, the reports and the exports from the video are in
 
 - [Prepare a Power BI Semantic Model for Migration with Measure Killer](https://youtu.be/4AV4RcsLBN4)
 - [Using Measure Killer to find unused tables, columns and measures across all connected reports](https://youtu.be/uW1LsRH9OtM)
->>>>>>> b75698854213bea8528a60a5015189534b5ae84b
+
