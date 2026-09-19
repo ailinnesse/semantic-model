@@ -152,6 +152,6 @@ and it is why the exploration in step 1 is worth ten minutes.
 
 ---
 
-Video: [How to Connect Multiple Fact Tables in Power BI](VIDEO-URL)
+Video: [How to Connect Multiple Fact Tables in Power BI](https://youtu.be/ZUIOyV-Kluo)
 
 Previous step: [Explore the source before you model it](01-explore-the-source.md)
