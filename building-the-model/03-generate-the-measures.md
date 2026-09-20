@@ -10,6 +10,9 @@ own model.
 
 **Everything here uses Tabular Editor 2, which is free.**
 
+Companion to the video
+[Automate Power BI Measures with Tabular Editor](https://youtu.be/1B10t3dQX5M).
+
 ---
 
 ## The idea behind it
@@ -436,5 +439,7 @@ dimensions from the last video. It needs measures, which is why it could not go
 there — and it is worth its own video rather than a corner of this one.
 
 ---
+
+Video: [Automate Power BI Measures with Tabular Editor](https://youtu.be/1B10t3dQX5M)
 
 Previous step: [Several fact tables, one set of shared dimensions](02-several-fact-tables.md)
