@@ -125,12 +125,55 @@ Model.AllColumns
 
 ### What just happened
 
-Nothing was changed. This opens a window listing every column that will get a
+Nothing was changed. This opens a grid listing every column that will get a
 measure in step 5 — it uses the exact same condition the generator does, so
 what you see is what you will get.
 
-Read the list. Anything in there that should not become a measure, go back to
-step 2 and set it to `None`. Run this again. Two or three rounds.
+The grid is editable. You can fix Summarize By and Format String there,
+without going back to the tree.
+
+Read the list. Fix what is wrong. Run it again. Two or three rounds.
+
+**Keep this script.** You will run it again after step 4, once the formats
+have been set, and it will show a different set of problems.
+
+### What it found on this model
+
+The preview is not a formality. On WideWorldImporters it caught five things,
+and four of them would have produced measures that were confidently wrong:
+
+| What | Why it matters |
+|---|---|
+| Every `WWI ... ID` column set to `Count` | These are the business keys. `Count of WWI Invoice ID` counts invoice lines. `Distinct Count` counts invoices, which is the number anyone actually wants |
+| `Delivery Year`, `Delivery Month Number` set to `Sum` | The date-part columns from the previous video. Summing a year |
+| `Reorder Level`, `Target Stock Level` set to `Sum` | Per-product thresholds. Adding them across products produces nothing meaningful |
+| `Total Chiller Items`, `Total Dry Items` formatted as currency | Counts of items, caught by the word "Total" in step 4 |
+| `Outstanding Balance` with no format | Money, but its name matches none of the currency words |
+
+The first three are fixable with more passes:
+
+```csharp
+// Business IDs: how many invoices, not how many rows
+foreach(var c in Model.AllColumns.Where(c => c.Name.EndsWith("ID")))
+{
+    c.SummarizeBy = AggregateFunction.DistinctCount;
+}
+
+// Date parts are for slicing, whatever table they live on
+foreach(var c in Model.AllColumns.Where(c =>
+    c.Name.EndsWith("Year") || c.Name.EndsWith("Month Number")))
+{
+    c.SummarizeBy = AggregateFunction.None;
+}
+
+// Thresholds are per product. Summing them means nothing
+foreach(var c in Model.AllColumns.Where(c => c.Name.Contains("Level")))
+{
+    c.SummarizeBy = AggregateFunction.None;
+}
+```
+
+The last two are handled in step 4.
 
 ### One thing it cannot tell you
 
@@ -173,13 +216,35 @@ generate, or every measure comes out unformatted.
 | `£` in the format string, three times | `$`, `€`, or whatever you use. The doubled quotes are C# escaping — keep them |
 | `Amount`, `Total`, `Price`, `Profit` | The words your model actually uses for money |
 
-### Then do the rest by hand
+### Fix what a word list cannot get right
 
-Not every column falls into a pattern, and pretending otherwise is how you end
-up with a model that is 90% right and quietly wrong in the other 10%.
+Matching on words produces two kinds of mistake, and this model has both.
 
-Click through whatever the script missed and set the format yourself. On this
-model that is `Last Cost Price` and one or two others. It takes a minute.
+**Caught something it should not have.** `Total Chiller Items` and
+`Total Dry Items` are counts of items. They contain the word "Total", so they
+now display as pounds:
+
+```csharp
+foreach(var c in Model.AllColumns.Where(c => c.Name.EndsWith("Items")))
+{
+    c.FormatString = "#,0";
+}
+```
+
+**Missed something it should have caught.** `Outstanding Balance` is money and
+matches none of the four words. No pattern will find it without also catching
+things you do not want, so set it by hand — select the column and edit Format
+String in the properties pane.
+
+### Then run the preview from step 3 again
+
+Now the format column has something in it, and both kinds of mistake are
+visible in one list.
+
+That is the honest part of this whole process. Not every column falls into a
+pattern, and pretending otherwise is how you end up with a model that is 90%
+right and quietly wrong in the other 10%. The preview is what stops the other
+10% from being invisible.
 
 ---
 
