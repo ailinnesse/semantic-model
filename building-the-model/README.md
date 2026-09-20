@@ -20,7 +20,7 @@ by setting up the columns once and letting the scripts read the model instead
 of guessing from names. Includes what to change if you copy the scripts.
 Scripts: [`base-measures.cs`](base-measures.cs) ·
 [`time-intelligence.cs`](time-intelligence.cs)
-Video: [Generate Power BI Measures with Tabular Editor]((https://youtu.be/1B10t3dQX5M))
+Video: [Generate Power BI Measures with Tabular Editor](https://youtu.be/1B10t3dQX5M)
 
 More to follow — working with the model as text, in TMDL and VS Code.
 
