@@ -14,7 +14,15 @@ Building a model on six fact tables. What makes it work, what Power BI builds
 for you, and what happens when one fact points at the same dimension twice.
 Video: [How to Connect Multiple Fact Tables in Power BI](https://youtu.be/ZUIOyV-Kluo)
 
-More to follow — generating measures, and working with the model as text.
+**3. [Generating measures with Tabular Editor](03-generate-the-measures.md)**
+Base measures and time intelligence, written by script rather than by hand —
+by setting up the columns once and letting the scripts read the model instead
+of guessing from names. Includes what to change if you copy the scripts.
+Scripts: [`base-measures.cs`](base-measures.cs) ·
+[`time-intelligence.cs`](time-intelligence.cs)
+Video: [Generate Power BI Measures with Tabular Editor](VIDEO-URL)
+
+More to follow — working with the model as text, in TMDL and VS Code.
 
 ---
 
