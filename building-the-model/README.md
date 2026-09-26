@@ -20,7 +20,13 @@ by setting up the columns once and letting the scripts read the model instead
 of guessing from names. Includes what to change if you copy the scripts.
 Scripts: [`base-measures.cs`](base-measures.cs) ·
 [`time-intelligence.cs`](time-intelligence.cs)
-Video: [Generate Power BI Measures with Tabular Editor](https://youtu.be/1B10t3dQX5M)
+Video: [Automate Power BI Measures with Tabular Editor](https://youtu.be/1B10t3dQX5M)
+
+**4. [Two dates, one fact table](04-role-playing-dimensions.md)**
+One relationship is active, the second is a dotted line. Three ways to use it —
+date parts on the fact, USERELATIONSHIP, and a duplicate dimension — what each
+one actually changes, and how to choose between them.
+Video: [Two Dates in One Table: USERELATIONSHIP in Power BI](VIDEO-LINK-HERE)
 
 More to follow — working with the model as text, in TMDL and VS Code.
 
