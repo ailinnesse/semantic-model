@@ -12,7 +12,7 @@ series. Each part of the series adds to it.
 |---|---|---|
 | 1 | [`setup`](setup) | A local SQL Server with real sample databases, so you have something to work against. Start here if you have nothing set up. |
 | 2 | [`preparing-for-migration`](preparing-for-migration) | What to do before you rebuild: review the reports with the business, find what the old model actually uses, and check the documentation you generate from it. |
-| 3 | [`building-the-model`](building-the-model) | Building the new model. Exploring the warehouse first, then several fact tables on one set of shared dimensions. |
+| 3 | [`building-the-model`](building-the-model) | Building the new model. Exploring the warehouse, several fact tables on shared dimensions, generating measures, handling two dates on one fact, and tidying the field list.|
 
 ## Getting started
 
