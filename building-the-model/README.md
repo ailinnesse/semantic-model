@@ -26,7 +26,14 @@ Video: [Automate Power BI Measures with Tabular Editor](https://youtu.be/1B10t3d
 One relationship is active, the second is a dotted line. Three ways to use it —
 date parts on the fact, USERELATIONSHIP, and a duplicate dimension — what each
 one actually changes, and how to choose between them.
-Video: [Two Dates in One Table: USERELATIONSHIP in Power BI](VIDEO-LINK-HERE)
+Video: [Power BI: Multiple Relationships Between Two Tables (USERELATIONSHIP)](https://youtu.be/jaqIzw7SbA4)
+
+**5. [Hide the key columns in one script](05-hide-key-columns.md)**
+Three lines that hide the fact side of every relationship, so nobody picks the
+wrong copy of a column. Reads the relationships rather than the column names.
+Scripts: [`hide-key-columns.cs`](hide-key-columns.cs) ·
+[`list-relationship-columns.cs`](list-relationship-columns.cs)
+Video: [Power BI: Hide the Fact Side of Every Relationship in Seconds](https://youtu.be/fVo0FjO3zqY)
 
 More to follow — working with the model as text, in TMDL and VS Code.
 
