@@ -35,6 +35,13 @@ Scripts: [`hide-key-columns.cs`](hide-key-columns.cs) ·
 [`list-relationship-columns.cs`](list-relationship-columns.cs)
 Video: [Power BI: Hide the Fact Side of Every Relationship in Seconds](https://youtu.be/fVo0FjO3zqY)
 
+**6. Make the model view readable**
+Fact tables in a column, dimensions in a row above them, and the relationship
+lines become a grid you can follow. No tools, no script — the layout is the
+whole step. Thanks to Jasmin Simader for the rule, and for the refinement.
+Video: [Power BI: Make Your Model View Readable in Under 2 Minutes](https://youtu.be/uNdov4zVEQo)
+
+
 More to follow — working with the model as text, in TMDL and VS Code.
 
 ---
